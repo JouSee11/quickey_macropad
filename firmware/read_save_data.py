@@ -131,6 +131,8 @@ def encoder_execute_action(action):
         encoder_rotate_action(encoder_actions[2])
 
 def encoder_rotate_action(action_code):
+    if action_code == "": return
+    
     if action_code == "volumeUp":
         consumer.send(ConsumerControlCode.VOLUME_INCREMENT)
     elif action_code == "volumeDown":
